@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Football Teams</title>
+</head>
+
+<body>
+    <h1>프리미어리그 팀</h1>
+    <ul>
+        <% teams.forEach(function(team) { %>
+            <li>
+                <h2>
+                    <%= team.team.name %>
+                </h2>
+                <!-- <p>Code: <%= team.team.code %></p> -->
+                <!-- <p>Country: <%= team.team.country %></p> --> <!-- 영국팀을 할 예정이기 때문에 필요없음. -->
+                <p>창립일: <%= team.team.founded %>년
+                </p>
+                <img src="<%= team.team.logo %>" alt="<%= team.team.name %> Logo" width="100">
+                <h3>경기장</h3>
+                <p>이름: <%= team.venue.name %>
+                </p>
+                <p>주소: <%= team.venue.address %>, <%= team.venue.city %>
+                </p>
+                <p>수용인원: <%= team.venue.capacity %>
+                </p>
+                <img src="<%= team.venue.image %>" alt="<%= team.venue.name %> Stadium" width="100">
+            </li>
+            <% }); %>
+    </ul>
+</body>
+
+</html>

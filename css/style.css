@@ -1,0 +1,25 @@
+ul {
+    list-style: none;
+}
+
+li {
+    float: left;
+    margin-right: 20px;
+}
+
+body {
+    padding: 30px;
+}
+
+/* li에서 float을 줬기 때문에 clear: both;를 해줌 */
+.season {
+    clear: both; 
+}
+
+.team-logo {
+    float: left;
+    padding: 2px;
+}
+
+/* 승점 굵게 만들어야함 */
+/* th:nth-child(4) {} */
