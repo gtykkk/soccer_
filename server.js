@@ -2,6 +2,7 @@ const express = require('express');
 const axios = require('axios');
 const ejs = require('ejs');
 const app = express();
+const { TEAM_API, teams, rank} = require('./apikey.js');
 
 app.use(express.json())
 app.use(express.static(__dirname + '/css'));
@@ -15,71 +16,27 @@ const server = app.listen(3030, () => {
 });
 
 app.get('/', async (요청, 응답) => {
-    const options = {
-        method: 'GET',
-        url: 'https://api-football-v1.p.rapidapi.com/v3/teams',
-        params: {
-            league: '39',
-            season: '2023'
-        },
-        headers: {
-            'X-RapidAPI-Key': '',
-            'X-RapidAPI-Host': ''
-        }
-    };
-
-    try {
-        const response = await axios.request(options);
-        console.log(response.data.response[0].team);
-        응답.render('soccer.ejs', { teams: response.data.response });
-    } catch (error) {
-        console.error(error);
-    }
+    응답.render('soccer.ejs');
 });
 
 app.get('/team', async (요청, 응답) => {
-    const options = {
-        method: 'GET',
-        url: 'https://api-football-v1.p.rapidapi.com/v3/teams',
-        params: {
-            league: '39',
-            season: '2023'
-        },
-        headers: {
-            'X-RapidAPI-Key': 'e67a702148mshcf491a0daaab2bfp1abd90jsn05764c864515',
-            'X-RapidAPI-Host': 'api-football-v1.p.rapidapi.com'
-        }
-    };
+    const TEAM_API = teams;
 
     try {
-        const response = await axios.request(options);
+        const response = await axios.request(TEAM_API);
         응답.render('team.ejs', { teams: response.data.response });
     } catch (error) {
-        console.error(error);
+        console.error("team : ", error);
     }
 });
 
 app.get('/rank', async (요청, 응답) => {
-    const axios = require('axios');
-
-    const options = {
-        method: 'GET',
-        url: 'https://api-football-v1.p.rapidapi.com/v3/standings',
-        params: {
-            season: '2023',
-            league: '39'
-        },
-        headers: {
-            'X-RapidAPI-Key': 'e67a702148mshcf491a0daaab2bfp1abd90jsn05764c864515',
-            'X-RapidAPI-Host': 'api-football-v1.p.rapidapi.com'
-        }
-    };
+    const RANK_API = rank;
 
     try {
-        const response = await axios.request(options);
-        console.log(response.data.response[0].league);
+        const response = await axios.request(RANK_API);
         응답.render('rank.ejs', { ranks : response.data.response[0].league });
     } catch (error) {
-        console.error(error);
+        console.error("rank : ", error);
     }
 });
