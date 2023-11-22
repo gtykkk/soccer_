@@ -46,8 +46,8 @@ app.get('/team', async (요청, 응답) => {
             season: '2023'
         },
         headers: {
-            'X-RapidAPI-Key': 'e67a702148mshcf491a0daaab2bfp1abd90jsn05764c864515',
-            'X-RapidAPI-Host': 'api-football-v1.p.rapidapi.com'
+            'X-RapidAPI-Key': '',
+            'X-RapidAPI-Host': ''
         }
     };
 
@@ -70,8 +70,8 @@ app.get('/rank', async (요청, 응답) => {
             league: '39'
         },
         headers: {
-            'X-RapidAPI-Key': 'e67a702148mshcf491a0daaab2bfp1abd90jsn05764c864515',
-            'X-RapidAPI-Host': 'api-football-v1.p.rapidapi.com'
+            'X-RapidAPI-Key': '',
+            'X-RapidAPI-Host': ''
         }
     };
 
