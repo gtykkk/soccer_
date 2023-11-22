@@ -2,7 +2,7 @@ const express = require('express');
 const axios = require('axios');
 const ejs = require('ejs');
 const app = express();
-const { TEAM_API, teams, rank} = require('./apikey.js');
+const { teams, rank } = require('./apikey.js');
 
 app.use(express.json())
 app.use(express.static(__dirname + '/css'));
