@@ -1,14 +1,36 @@
-ul {
-    list-style: none;
+body {
+    padding: 20px;
+}
+
+.league .list {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
 }
 
 .league li {
-    display: inline-block;
-    margin: 5px;
+    display: table-cell;
 }
 
-body {
-    padding: 30px;
+.rank td.selected {
+   border-width: 0 1px 0; 
+   border-style: solid;
+   border-color: #ed2621;
+}
+
+.rank th.selected {
+    border-width: 1px 1px 0;
+    border-style: solid;
+    border-color: #ed2621;
+}
+
+.rank .table {
+    font-size: 14px;
+    border-spacing: 2px;
+}
+
+.rank .selected {
+    font-weight: bold;
 }
 
 .team-logo {
@@ -19,12 +41,12 @@ body {
 .container {
     width: 100%;
     max-width: 900px;
-    margin: auto;
 }
 
 .league {
-    width: 50%;
-    margin: auto;
+    width: 100%;
+    margin-bottom: 40px;
+    font-size: 20px;
 }
 
 .w-5 {

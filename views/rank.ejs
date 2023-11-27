@@ -13,8 +13,8 @@
 
 <body>
   <div class="container">
-    <div class="league">
-      <ul>
+    <div class="league text-center">
+      <ul class="list">
         <li>프리미어리그</li>
         <li>라리가</li>
         <li>분데스리가</li>
@@ -29,20 +29,20 @@
         </span>
       </h4>
     </div>
-    <div>
-      <table class="table">
-        <thead>
+    <div class="rank text-center">
+      <table class="table table-borderless">
+        <thead class="table-secondary">
           <tr>
-            <th class="w-5 text-center" scope="col">순위</th>
-            <th class="w-20" scope="col">팀</th>
-            <th class="w-5 text-center" scope="col">경기수</th>
-            <th class="w-5 text-center" scope="col">승점</th>
-            <th class="w-5 text-center" scope="col">승</th>
-            <th class="w-5 text-center" scope="col">무</th>
-            <th class="w-5 text-center" scope="col">패</th>
-            <th class="w-5 text-center" scope="col">득점</th>
-            <th class="w-5 text-center" scope="col">실점</th>
-            <th class="w-5 text-center" scope="col">득실차</th>
+            <th class="w-5" scope="col">순위</th>
+            <th class="w-20" style="text-align: left;" scope="col">팀</th>
+            <th class="w-5" scope="col">경기수</th>
+            <th class="w-5 selected" scope="col">승점</th>
+            <th class="w-5" scope="col">승</th>
+            <th class="w-5" scope="col">무</th>
+            <th class="w-5" scope="col">패</th>
+            <th class="w-5" scope="col">득점</th>
+            <th class="w-5" scope="col">실점</th>
+            <th class="w-5" scope="col">득실차</th>
           </tr>
         </thead>
         <tbody>
@@ -50,34 +50,34 @@
             outerArray.forEach((rank) => {
             %>
             <tr>
-              <th class="text-center" scope="row">
+              <th scope="row">
                 <%= rank.rank %>
               </th>
               <td><img class="team-logo" src="<%= rank.team.logo %>" alt="<%= rank.team.name %> Logo" width="25px">
                 <%= rank.team.name %>
               </td>
-              <td class="text-center">
+              <td>
                 <%= rank.all.played %>
               </td>
-              <td class="text-center">
+              <td class="selected">
                 <%= rank.points %>
               </td>
-              <td class="text-center">
+              <td>
                 <%= rank.all.win %>
               </td>
-              <td class="text-center">
+              <td>
                 <%= rank.all.draw %>
               </td>
-              <td class="text-center">
+              <td>
                 <%= rank.all.lose %>
               </td>
-              <td class="text-center">
+              <td>
                 <%= rank.all.goals.for %>
               </td>
-              <td class="text-center">
+              <td>
                 <%= rank.all.goals.against %>
               </td>
-              <td class="text-center">
+              <td>
                 <%= rank.goalsDiff %>
               </td>
             </tr>
