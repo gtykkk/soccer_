@@ -2,7 +2,7 @@ const express = require('express');
 const axios = require('axios');
 const ejs = require('ejs');
 const app = express();
-const { teams, rank } = require('./apikey.js');
+const { teams, epl, primera, bundesliga, seria, league1 } = require('./apikey.js');
 
 app.use(express.json())
 app.use(express.static(__dirname + '/css'));
@@ -31,11 +31,26 @@ app.get('/team', async (요청, 응답) => {
 });
 
 app.get('/rank', async (요청, 응답) => {
-    const RANK_API = rank;
+    const EPL_RANK = epl;
+    const PRIMERA_RANK = primera;
+    const BUNDESLIGA_RANK = bundesliga;
+    const SERIA_RANK = seria;
+    const LEAGUE1_RANK = league1;
 
     try {
-        const response = await axios.request(RANK_API);
-        응답.render('rank.ejs', { ranks : response.data.response[0].league });
+        const epl_response = await axios.request(EPL_RANK);
+        const primera_response = await axios.request(PRIMERA_RANK);
+        const bundesliga_response = await axios.request(BUNDESLIGA_RANK);
+        const seria_response = await axios.request(SERIA_RANK);
+        const league1_response = await axios.request(LEAGUE1_RANK);
+
+        응답.render('rank.ejs', { 
+            epl_rank : epl_response.data.response[0].league,
+            primera_rank : primera_response.data.response[0].league,
+            bundesliga_rank : bundesliga_response.data.response[0].league,
+            seria_rank : seria_response.data.response[0].league,
+            league1_rank : league1_response.data.response[0].league
+        });
     } catch (error) {
         console.error("rank : ", error);
     }
