@@ -1,19 +1,86 @@
-.nav {
-    padding: 0px;
-}
-
 body {
     padding: 20px;
+}
+
+ul {
+    display: block;
+    list-style-type: disc;
+    margin-block-start: 0px;
+    margin-block-end: 0px;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 0px;
+}
+
+.league {
+    margin-bottom: 48px;
+    border-top: 3px solid #3f4550;
+}
+
+.league li.selected {
+    background: #fff;
+    color: #22ba9a;
+    background: #0ae4c442;
+}
+
+.league .menu {
+    display: block;
+    position: relative;
+    height: 51px;
+    border-bottom: 1px solid #b4b5c0;
+    line-height: 49px;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.league .menu:first-child img {
+    margin-right: 7px;
+}
+
+.league .menu img {
+    margin-right: 9px;
+    vertical-align: middle;
+    width: 20px;
+}
+
+.league .title {
+    font-size: 15px;
+    font-weight: bold;
+    letter-spacing: -1px;
+    vertical-align: middle;
+}
+
+.league a {
+    display: block;
+    background: #f7f7f9;
+    color: #3f4044;
+    text-decoration: none;
 }
 
 .league .list {
     display: table;
     width: 100%;
     table-layout: fixed;
+    border-right: 1px solid #b3b5c0;
+    border-left: 1px solid #b3b5c0;
     cursor: pointer;
 }
 
 .league li {
+    display: table-cell;
+}
+
+.team-league .list {
+    display: table;
+    table-layout: fixed;
+    cursor: pointer;
+}
+
+.team-league li:first-child {
+    border-right: 1px solid #b3b5c0;
+}
+
+.team-league li {
     display: table-cell;
 }
 

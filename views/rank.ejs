@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>팀 / 개인 순위</title>
   <link href="/normalize.css" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
@@ -14,13 +14,48 @@
 
 <body>
   <div class="container">
+    <div class="team-league">
+      <ul class="list">
+        <li class="selected">
+          <span class="menu">팀순위</span>
+        </li>
+        <li>
+          <span>개인순위</span>
+        </li>
+      </ulc>
+    </div>
     <div class="league text-center">
       <ul class="list">
-        <li class="epl">프리미어리그</li>
-        <li class="primera">라리가</li>
-        <li class="bundesliga">분데스리가</li>
-        <li class="seria">세리에A</li>
-        <li class="league1">리그앙</li>
+        <li class="epl selected">
+          <span class="menu">
+            <img src='<%=logo.response[5].league.logo %>'>
+            <span class="title">프리미어리그</span>
+          </span>
+        </li>
+        <li class="primera">
+          <span class="menu">
+            <img src='<%=logo.response[10].league.logo %>'>
+            <span class="title">라리가</span>
+          </span>
+        </li>
+        <li class="bundesliga">
+          <span class="menu">
+            <img src='<%=logo.response[6].league.logo %>'>
+            <span class="title">분데스리가</span>
+          </span>
+        </li>
+        <li class="seria">
+          <span class="menu">
+            <img src='<%=logo.response[7].league.logo %>'>
+            <span class="title">세리에</span>
+          </span>
+        </li>
+        <li class="league1">
+          <span class="menu">
+            <img src='<%=logo.response[2].league.logo %>'>
+            <span class="title">리그1</span>
+          </span>
+        </li>
       </ul>
     </div>
     <div class="season">
@@ -244,10 +279,9 @@
       if ($('.tb-epl').hasClass('inv')) {
         $('.tb-epl').removeClass('inv');
       }
-      $('.tb-primera').addClass('inv');
-      $('.tb-bundesliga').addClass('inv');
-      $('.tb-seria').addClass('inv');
-      $('.tb-league1').addClass('inv');
+      $('tbody').not('.tb-epl').addClass('inv');
+      $(this).addClass('selected');
+      $('li').not('.epl').removeClass('selected');
       console.log('epl 선택');
     });
 
@@ -255,10 +289,9 @@
       if ($('.tb-primera').hasClass('inv')) {
         $('.tb-primera').removeClass('inv');
       }
-      $('.tb-epl').addClass('inv');
-      $('.tb-bundesliga').addClass('inv');
-      $('.tb-seria').addClass('inv');
-      $('.tb-league1').addClass('inv');
+      $('tbody').not('.tb-primera').addClass('inv');
+      $(this).addClass('selected');
+      $('li').not('.primera').removeClass('selected');
       console.log('primera 선택');
     });
 
@@ -266,10 +299,9 @@
       if ($('.tb-bundesliga').hasClass('inv')) {
         $('.tb-bundesliga').removeClass('inv');
       }
-      $('.tb-epl').addClass('inv');
-      $('.tb-primera').addClass('inv');
-      $('.tb-seria').addClass('inv');
-      $('.tb-league1').addClass('inv');
+      $('tbody').not('.tb-bundesliga').addClass('inv');
+      $(this).addClass('selected');
+      $('li').not(this).removeClass('selected');
       console.log('bundesliga 선택');
     });
 
@@ -277,10 +309,9 @@
       if ($('.tb-seria').hasClass('inv')) {
         $('.tb-seria').removeClass('inv');
       }
-      $('.tb-epl').addClass('inv');
-      $('.tb-primera').addClass('inv');
-      $('.tb-bundesliga').addClass('inv');
-      $('.tb-league1').addClass('inv');
+      $('tbody').not('.tb-seria').addClass('inv');
+      $(this).addClass('selected');
+      $('li').not('.seria').removeClass('selected');
       console.log('seria 선택');
     });
 
@@ -288,10 +319,9 @@
       if ($('.tb-league1').hasClass('inv')) {
         $('.tb-league1').removeClass('inv');
       }
-      $('.tb-epl').addClass('inv');
-      $('.tb-primera').addClass('inv');
-      $('.tb-bundesliga').addClass('inv');
-      $('.tb-seria').addClass('inv');
+      $('tbody').not('.tb-league1').addClass('inv');
+      $(this).addClass('selected');
+      $('li').not('.league1').removeClass('selected');
       console.log('league1 선택');
     });
   </script>
