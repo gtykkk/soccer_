@@ -119,6 +119,158 @@
             </tr>
             <% }); }); %>
         </tbody>
+        <tbody class="tb-primera inv">
+          <% primera_rank.standings.forEach((outerArray)=> {
+            outerArray.forEach((rank) => {
+            %>
+            <tr>
+              <th scope="row">
+                <%= rank.rank %>
+              </th>
+              <td><img class="team-logo" src="<%= rank.team.logo %>" alt="<%= rank.team.name %> Logo" width="25px">
+                <%= rank.team.name %>
+              </td>
+              <td>
+                <%= rank.all.played %>
+              </td>
+              <td class="selected">
+                <%= rank.points %>
+              </td>
+              <td>
+                <%= rank.all.win %>
+              </td>
+              <td>
+                <%= rank.all.draw %>
+              </td>
+              <td>
+                <%= rank.all.lose %>
+              </td>
+              <td>
+                <%= rank.all.goals.for %>
+              </td>
+              <td>
+                <%= rank.all.goals.against %>
+              </td>
+              <td>
+                <%= rank.goalsDiff %>
+              </td>
+            </tr>
+            <% }); }); %>
+        </tbody>
+        <tbody class="tb-bundesliga inv">
+          <% bundesliga_rank.standings.forEach((outerArray)=> {
+            outerArray.forEach((rank) => {
+            %>
+            <tr>
+              <th scope="row">
+                <%= rank.rank %>
+              </th>
+              <td><img class="team-logo" src="<%= rank.team.logo %>" alt="<%= rank.team.name %> Logo" width="25px">
+                <%= rank.team.name %>
+              </td>
+              <td>
+                <%= rank.all.played %>
+              </td>
+              <td class="selected">
+                <%= rank.points %>
+              </td>
+              <td>
+                <%= rank.all.win %>
+              </td>
+              <td>
+                <%= rank.all.draw %>
+              </td>
+              <td>
+                <%= rank.all.lose %>
+              </td>
+              <td>
+                <%= rank.all.goals.for %>
+              </td>
+              <td>
+                <%= rank.all.goals.against %>
+              </td>
+              <td>
+                <%= rank.goalsDiff %>
+              </td>
+            </tr>
+            <% }); }); %>
+        </tbody>
+        <tbody class="tb-seria inv">
+          <% seria_rank.standings.forEach((outerArray)=> {
+            outerArray.forEach((rank) => {
+            %>
+            <tr>
+              <th scope="row">
+                <%= rank.rank %>
+              </th>
+              <td><img class="team-logo" src="<%= rank.team.logo %>" alt="<%= rank.team.name %> Logo" width="25px">
+                <%= rank.team.name %>
+              </td>
+              <td>
+                <%= rank.all.played %>
+              </td>
+              <td class="selected">
+                <%= rank.points %>
+              </td>
+              <td>
+                <%= rank.all.win %>
+              </td>
+              <td>
+                <%= rank.all.draw %>
+              </td>
+              <td>
+                <%= rank.all.lose %>
+              </td>
+              <td>
+                <%= rank.all.goals.for %>
+              </td>
+              <td>
+                <%= rank.all.goals.against %>
+              </td>
+              <td>
+                <%= rank.goalsDiff %>
+              </td>
+            </tr>
+            <% }); }); %>
+        </tbody>
+        <tbody class="tb-league1 inv">
+          <% league1_rank.standings.forEach((outerArray)=> {
+            outerArray.forEach((rank) => {
+            %>
+            <tr>
+              <th scope="row">
+                <%= rank.rank %>
+              </th>
+              <td><img class="team-logo" src="<%= rank.team.logo %>" alt="<%= rank.team.name %> Logo" width="25px">
+                <%= rank.team.name %>
+              </td>
+              <td>
+                <%= rank.all.played %>
+              </td>
+              <td class="selected">
+                <%= rank.points %>
+              </td>
+              <td>
+                <%= rank.all.win %>
+              </td>
+              <td>
+                <%= rank.all.draw %>
+              </td>
+              <td>
+                <%= rank.all.lose %>
+              </td>
+              <td>
+                <%= rank.all.goals.for %>
+              </td>
+              <td>
+                <%= rank.all.goals.against %>
+              </td>
+              <td>
+                <%= rank.goalsDiff %>
+              </td>
+            </tr>
+            <% }); }); %>
+        </tbody>
       </table>
     </div>
   </div>
@@ -138,10 +290,6 @@
     });
 
     $('.primera').click(function () {
-      $.ajax({
-        url: '/primera',
-        type: GET
-      })
       if ($('.tb-primera').hasClass('inv')) {
         $('.tb-primera').removeClass('inv');
       }
@@ -188,7 +336,7 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
     crossorigin="anonymous"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  < src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></>
 </body>
 
 </html>

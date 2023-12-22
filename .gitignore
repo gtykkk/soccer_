@@ -27,3 +27,5 @@ build/*
 *.log
 .DS_Store
 apikey.js
+
+.env
