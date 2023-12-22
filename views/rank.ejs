@@ -134,6 +134,7 @@
       $('tbody').not('.tb-epl').addClass('inv');
       $(this).addClass('selected');
       $('li').not('.epl').removeClass('selected');
+
       console.log('epl 선택');
     });
 
@@ -148,6 +149,7 @@
       $('tbody').not('.tb-primera').addClass('inv');
       $(this).addClass('selected');
       $('li').not('.primera').removeClass('selected');
+
       console.log('primera 선택');
     });
 
@@ -157,7 +159,8 @@
       }
       $('tbody').not('.tb-bundesliga').addClass('inv');
       $(this).addClass('selected');
-      $('li').not(this).removeClass('selected');
+      $('li').not('.bundesliga').removeClass('selected');
+
       console.log('bundesliga 선택');
     });
 
@@ -168,6 +171,7 @@
       $('tbody').not('.tb-seria').addClass('inv');
       $(this).addClass('selected');
       $('li').not('.seria').removeClass('selected');
+
       console.log('seria 선택');
     });
 
@@ -178,6 +182,7 @@
       $('tbody').not('.tb-league1').addClass('inv');
       $(this).addClass('selected');
       $('li').not('.league1').removeClass('selected');
+
       console.log('league1 선택');
     });
   </script>
